@@ -9,6 +9,10 @@ class UsersController < ApplicationController
         render json: user, status: :ok
     end
 
+    def delete
+
+    end
+
     private
 
     def user_params

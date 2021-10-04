@@ -1,6 +1,6 @@
 
-
-
+Game.destroy_all
+User.destroy_all
 User.create!([
     {
       name: "Link",
@@ -27,7 +27,7 @@ User.create!([
         fav_loz_game: "A Link to the Past",
         pic: "https://tse1.mm.bing.net/th?id=OIP.ipXLGYm1kCSK6ejQ7aqScAHaHH&pid=Api&P=0&w=170&h=164"
     },
-    {
+    {  
         name: "Gorko",
         fav_loz_game: "Skyward Sword",
         pic: "https://tse3.explicit.bing.net/th?id=OIP.dYh9kLC49JBgQe3-8G0Y-AAAAA&pid=Api&P=0&w=178&h=170"
@@ -41,7 +41,7 @@ Game.create!([
     system: "NES",
     year: 1986,
     rating: "⭐️8.7",
-    user_id: User.last.id
+    user_id: User.all[1].id
   },
   {
     name: "The Legend of Zelda: Link's Awakening",
@@ -49,7 +49,7 @@ Game.create!([
     system: "GB",
     year: 1993,
     rating: "⭐️8.6",
-    user_id: User.first.id    
+    user_id: User.all[5].id
   },
   {
     name: "Link: The Faces of Evil",
@@ -57,7 +57,7 @@ Game.create!([
     system: "CD-i",
     year: 1993,
     rating: "⭐️2",
-    user_id: User.first.id
+    user_id: User.all[0].id
   },
   {
     name: "The Legend of Zelda: Ocarina of Time",
@@ -65,7 +65,7 @@ Game.create!([
     system: "N64",
     year: 1998,
     rating: "⭐️9.6",
-    user_id: User.first.id
+    user_id: User.all[1].id
   },
   {
     name: "The Legend of Zelda: Majora's Mask",
@@ -73,7 +73,7 @@ Game.create!([
     system: "N64",
     year: 2000,
     rating: "⭐️9.1",
-    user_id: User.first.id
+    user_id: User.all[0].id
   },
   {
     name:"The Legend of Zelda: Oracle of Ages",
@@ -81,7 +81,7 @@ Game.create!([
     system: "GBC",
     year: 2001,
     rating: "⭐️7.7",
-    user_id: User.first.id
+    user_id: User.all[3].id
   },
   {
     name:"The Legend of Zelda: The Wind Waker",
@@ -89,7 +89,7 @@ Game.create!([
     system: "GC",
     year: 2002,
     rating: "⭐️9",
-    user_id: User.first.id
+    user_id: User.all[5].id
   },
   {
     name: "The Legend of Zelda: Twilight Princess",
@@ -97,7 +97,7 @@ Game.create!([
     system: "Wii",
     year: 2006,
     rating: "⭐️9",
-    user_id: User.first.id
+    user_id: User.all[4].id
   },
   {
     name:"The Legend of Zelda: Phantom Hourglass",
@@ -105,7 +105,7 @@ Game.create!([
     system: "DS",
     year: 2007,
     rating: "⭐️7.6",
-    user_id: User.first.id
+    user_id: User.all[2].id
   },
   {
     name:"The Legend of Zelda: Spirit Tracks",
@@ -113,7 +113,7 @@ Game.create!([
     system: "DS",
     year: 2009,
     rating: "⭐️7.2",
-    user_id: User.first.id
+    user_id: User.all[3].id
   },
   {
     name:"The Legend of Zelda: Tri Force Heroes",
@@ -121,7 +121,7 @@ Game.create!([
     system: "3DS",
     year: 2015,
     rating: "⭐️6.5",
-    user_id: User.first.id
+    user_id: User.all[4].id
   },
   {
     name:"The Legend of Zelda: Breath of the Wild",
@@ -129,7 +129,7 @@ Game.create!([
     system: "Switch",
     year: 2017,
     rating: "⭐️9.4", 
-    user_id: User.first.id
+    user_id: User.all[2].id
   }
 ])
 
