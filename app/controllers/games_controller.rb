@@ -4,3 +4,4 @@ class GamesController < ApplicationController
         render json: Game.all, status: :ok
     end
 end
+#with status
