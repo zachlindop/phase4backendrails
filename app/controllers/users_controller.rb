@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
 
     def index
-        render json: User.all
+        render json: User.order(created_at: :desc)
+    end
+
+    def show
+
+        user_found = user.find_by(id: params[:id])
+            if user_found
+                render json: user_found
+            else
+                render json: {error: "User not found"}
+            end
+
     end
 
     def create
@@ -9,8 +20,23 @@ class UsersController < ApplicationController
         render json: user, status: :ok
     end
 
-    def delete
+    def update
+        user = User.find(params[:id])
+        if user.update(user_params)
+            render json: user, status: :ok
+        else
+            render json: { message: 'Had problem while updating user' }, status: 422
+        end
+    end
 
+    def destroy
+        user = User.find_by(id: params[:id])
+        if user.present?
+            user.destroy
+            render json: { message: 'User deleted successfully' }, status: :ok
+        else
+            render json: { error: "user not found" }, status: 404
+        end
     end
 
     private
