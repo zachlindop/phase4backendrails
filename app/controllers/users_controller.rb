@@ -4,16 +4,16 @@ class UsersController < ApplicationController
         render json: User.order(created_at: :desc)
     end
 
-    def show
+    # def show
 
-        user_found = user.find_by(id: params[:id])
-            if user_found
-                render json: user_found
-            else
-                render json: {error: "User not found"}
-            end
+    #     user_found = user.find_by(id: params[:id])
+    #         if user_found
+    #             render json: user_found
+    #         else
+    #             render json: {error: "User not found"}
+    #         end
 
-    end
+    # end
 
     def create
         user = User.create(user_params)
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
             user.destroy
             render json: { message: 'User deleted successfully' }, status: :ok
         else
-            render json: { error: "user not found" }, status: 404
+            render json: { error: 'user not found' }, status: 404
         end
     end
 

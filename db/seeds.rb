@@ -40,7 +40,7 @@ Game.create!([
     image: "https://tse2.mm.bing.net/th?id=OIP.3e9GfJP7j0OSMysDV0ruXQHaEK&pid=Api&P=0&w=340&h=192",
     system: "NES",
     year: 1986,
-    rating: "⭐️8.7",
+    rating: 8.7,
     user_id: User.all[1].id
   },
   {
@@ -48,7 +48,7 @@ Game.create!([
     image: "https://tse3.mm.bing.net/th?id=OIP.9ppCVuceppLREjhZJ09CLwHaEK&pid=Api&P=0&w=301&h=170",
     system: "GB",
     year: 1993,
-    rating: "⭐️8.6",
+    rating: 8.6,
     user_id: User.all[5].id
   },
   {
@@ -56,7 +56,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.--1K6wt6qyJKJu3RDzC4jAHaH7&pid=Api&P=0&w=300&h=300",
     system: "CD-i",
     year: 1993,
-    rating: "⭐️2",
+    rating: 2,
     user_id: User.all[0].id
   },
   {
@@ -64,7 +64,7 @@ Game.create!([
     image: "https://tse2.mm.bing.net/th?id=OIP.PHSV9RGTZk8T6hO52YYaeQHaHa&pid=Api&P=0&w=300&h=300",
     system: "N64",
     year: 1998,
-    rating: "⭐️9.6",
+    rating: 9.6,
     user_id: User.all[1].id
   },
   {
@@ -72,7 +72,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.4EoUV8Gs-p3MOitfuEGqiQHaHa&pid=Api&P=0&w=300&h=300",
     system: "N64",
     year: 2000,
-    rating: "⭐️9.1",
+    rating: 9.1,
     user_id: User.all[0].id
   },
   {
@@ -80,7 +80,7 @@ Game.create!([
     image: "https://tse2.mm.bing.net/th?id=OIP.qYYoOESuR04FAtDR3kBODAHaF7&pid=Api&P=0&w=187&h=151",
     system: "GBC",
     year: 2001,
-    rating: "⭐️7.7",
+    rating: 7.7,
     user_id: User.all[3].id
   },
   {
@@ -88,7 +88,7 @@ Game.create!([
     image: "https://tse2.mm.bing.net/th?id=OIP.EUZES_MxU4Pu0Uw-UETVvQHaFj&pid=Api&P=0&w=200&h=151",
     system: "GC",
     year: 2002,
-    rating: "⭐️9",
+    rating: 9,
     user_id: User.all[5].id
   },
   {
@@ -96,7 +96,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.ZrrBJ966pgjq7gfCpengegHaHa&pid=Api&P=0&w=300&h=300",
     system: "Wii",
     year: 2006,
-    rating: "⭐️9",
+    rating: 9,
     user_id: User.all[4].id
   },
   {
@@ -104,7 +104,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.YoemwforF0kb1iDLxAycLAHaHP&pid=Api&P=0&w=168&h=165",
     system: "DS",
     year: 2007,
-    rating: "⭐️7.6",
+    rating: 7.6,
     user_id: User.all[2].id
   },
   {
@@ -112,7 +112,7 @@ Game.create!([
     image: "https://tse3.mm.bing.net/th?id=OIP.Egqf5MCDGLG_hkxpcb6ryQHaDt&pid=Api&P=0&w=345&h=173",
     system: "DS",
     year: 2009,
-    rating: "⭐️7.2",
+    rating: 7.2,
     user_id: User.all[3].id
   },
   {
@@ -120,7 +120,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.CtCUBKcEkdAhtvbgQL4L8gHaDt&pid=Api&P=0&w=300&h=150",
     system: "3DS",
     year: 2015,
-    rating: "⭐️6.5",
+    rating: 6.5,
     user_id: User.all[4].id
   },
   {
@@ -128,7 +128,7 @@ Game.create!([
     image: "https://tse1.mm.bing.net/th?id=OIP.IieQ0Vj8VREwwkJ7zfA-YwHaEK&pid=Api&P=0&w=311&h=175",
     system: "Switch",
     year: 2017,
-    rating: "⭐️9.4", 
+    rating: 9.4, 
     user_id: User.all[2].id
   }
 ])
