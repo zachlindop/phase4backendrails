@@ -7,6 +7,8 @@ import Navbar from './Navbar'
 import Home from './Home'
 import Games from './components/Games'
 import Users from './components/Users'
+import { NavLink } from "react-router-dom"
+
 
 import {
   BrowserRouter as Router,
@@ -51,16 +53,49 @@ function App() {
           <Switch>
             <Route path="/games" component = {Games}>
               <Games users={users} games={games} setGames={setGames} />
+              <NavLink to="/">
+                <h3>Home</h3>
+            </NavLink>
+            <NavLink to="/users">
+                    <h4> Users</h4>
+            </NavLink>
+            <NavLink to="/games">
+                    <h4>LOZ Games</h4>
+            </NavLink>
             </Route>
 
             <Route path="/users" component = {Users}>
               <Users users={users} setUsers={setUsers} />
+              <NavLink to="/">
+                <h3>Home</h3>
+            </NavLink>
+            <NavLink to="/users">
+                    <h4> Users</h4>
+            </NavLink>
+            <NavLink to="/games">
+                    <h4>LOZ Games</h4>
+            </NavLink>
             </Route>
-
+              
+            
+           
             <Route exact path="/">
             <Home />
+            <NavLink to="/">
+                <h3>Home</h3>
+            </NavLink>
+            <NavLink to="/users">
+                    <h4> Users</h4>
+            </NavLink>
+            <NavLink to="/games">
+                    <h4>LOZ Games</h4>
+            </NavLink>
+              
             </Route>
+           
 
+
+                
             {/* <Route exact path="/">
               <User />
             </Route>
