@@ -75,7 +75,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">     
-      { isLoggedIn && <p> Logged In as {user.name} </p>}       
+      { isLoggedIn && <p> Logged In as {user.name} </p>}
+      { isLoggedIn && <button onClick={handleLogout}>Log Out</button>}
       </header>
     {/* </div> */}
       // <div>
