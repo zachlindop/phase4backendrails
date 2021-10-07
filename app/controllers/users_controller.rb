@@ -20,6 +20,22 @@ class UsersController < ApplicationController
         render json: user, status: :ok
     end
 
+    def login
+        @user = User.new(login_params)
+            if @user.save
+                login!
+                render json: {
+                status: :created,
+                user: @user
+            }
+            else
+                render json: {
+                status: 500,
+                errors: @user.errors.full_messages
+            }
+            end
+    end
+
     def update
         user = User.find(params[:id])
         if user.update(user_params)
@@ -43,5 +59,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:name, :fav_loz_game, :pic)
+    end
+
+    def login_params
+        params.require(:user).permit(:username, :password, :password_confirmation)
     end
 end
