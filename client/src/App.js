@@ -94,19 +94,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">     
-      { isLoggedIn && currentUserName && currentUserId && <p> Logged In as {currentUserName} </p>}
-      { isLoggedIn && <button onClick={handleLogout}>Log Out</button>}
-      </header>
-    {/* </div> */}
-      // <div>
+        { isLoggedIn && currentUserName && currentUserId && <p> Logged In as {currentUserName} </p>}
+        { isLoggedIn && <button onClick={handleLogout}>Log Out</button>}
+      </header>    
+      <div>
          <Navbar />
          <Router>
           <Switch>
+            {!isLoggedIn && <Login handleLogin={handleLogin} />}
+
             <Route path="/games" component = {Games}>
               <Games users={users} games={games} setGames={setGames} />
               <NavLink to="/">
                 <h3>Home</h3>
-            </NavLink>
+              </NavLink>
             <NavLink to="/users">
                     <h4> Users</h4>
             </NavLink>
@@ -115,11 +116,7 @@ function App() {
             </NavLink>
             </Route>
 
-            <Route exact path='/login' component={Login}/>
-            
-            {!isLoggedIn && <Login handleLogin={handleLogin} />}            
-
-            <Route exact path='/signup' component={Login}/>
+            <Route exact path='/login' component={Login}/>                        
 
             <Route path="/users" component = {Users}>
               <Users users={users} setUsers={setUsers} />
@@ -135,35 +132,20 @@ function App() {
             </Route>
                           
             <Route exact path="/">
-            <Home />
-            
-            <NavLink to="/">
-                <h3>Home</h3>
-            </NavLink>
-            
-            <NavLink to="/users">
-                    <h4> Users</h4>
-            </NavLink>
-            <NavLink to="/games">
-                    <h4>LOZ Games</h4>
-            </NavLink>
-              
-            </Route>
-           
-
-
-                
-            {/* <Route exact path="/">
-              <User />
-            </Route>
-
-            <Route exact path="/">
-              <Game />
-            </Route>  */}
+            <Home />            
+              <NavLink to="/">
+                  <h3>Home</h3>
+              </NavLink>            
+              <NavLink to="/users">
+                      <h4> Users</h4>
+              </NavLink>
+              <NavLink to="/games">
+                      <h4>LOZ Games</h4>
+              </NavLink>              
+            </Route>          
           </Switch>
-         </Router>
-      
-      //  </div>
+         </Router>      
+       </div>
       </div>
   );
 }
