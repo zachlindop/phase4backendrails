@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
     # end
 
-    def create
-        user = User.create(user_params)
+    def create        
+        user = User.create!(user_params.merge(password: 'test123'))
         render json: user, status: :ok
     end
 

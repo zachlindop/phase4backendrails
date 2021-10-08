@@ -27,30 +27,50 @@ function App() {
   const[games, setGames] = useState( [] )
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({});
+  const [currentUserName, setCurrentUserName] = useState('');
+  const [currentUserId, setCurrentUserId] = useState('');
 
   const handleLogin = (data) => {
     setIsLoggedIn(true);
-    setUser(data.user);
-    console.log(`loged in as user: ${user}`);
+    console.log(`data.user: ${JSON.stringify(data.user)}`);
+    setCurrentUserName(data.user.name);
+    setCurrentUserId(data.user.id);    
+    localStorage.setItem("currentUserName", data.user.name);
+    localStorage.setItem("currentUserId", data.user.id);
   }
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUser({});
+    setCurrentUserName('');
+    setCurrentUserId('');
+    localStorage.clear();
   }
 
   const loginStatus = () => {
-    fetch ('http://localhost:3001/logged_in')
-    .then(r=> r.json())
-    .then(response => {
-      console.log(`loginStatus response: ${JSON.stringify(response)}`)
-      if (response.logged_in) {
-        handleLogin(response)
-      } else {
-        handleLogout()
-      }
-    })
+    const loggedInUserName = localStorage.getItem("currentUserName");
+    const loggedInUserId = localStorage.getItem("currentUserId");
+
+    console.log(`loggedInUserName: ${loggedInUserName}`);
+
+    if (loggedInUserName && loggedInUserId) {
+      console.log('Not making API call. User found in local storage');
+      setCurrentUserName(loggedInUserName);
+      setCurrentUserId(loggedInUserId);
+      setIsLoggedIn(true);
+    }
+    else {
+      console.log('making API call: http://localhost:3001/logged_in');
+      fetch ('http://localhost:3001/logged_in')
+      .then(r=> r.json())
+      .then(response => {
+        console.log(`loginStatus response: ${JSON.stringify(response)}`)
+        if (response.logged_in) {
+          handleLogin(response)
+        } else {
+          handleLogout()
+        }
+      })
+    }
   };
   
   //console.log("LOZGame: ", games)
@@ -66,16 +86,15 @@ function App() {
     .then(r=> r.json())
     .then(fetchedLOZGames =>{
       console.log("fetchedLOZGames!!!123: ", fetchedLOZGames)
-      setGames(fetchedLOZGames)  
+      setGames(fetchedLOZGames)
     })
-
-    // loginStatus();
+    loginStatus();   
   }, [])
 
   return (
     <div className="App">
       <header className="App-header">     
-      { isLoggedIn && <p> Logged In as {user.name} </p>}
+      { isLoggedIn && currentUserName && currentUserId && <p> Logged In as {currentUserName} </p>}
       { isLoggedIn && <button onClick={handleLogout}>Log Out</button>}
       </header>
     {/* </div> */}
@@ -121,6 +140,7 @@ function App() {
             <NavLink to="/">
                 <h3>Home</h3>
             </NavLink>
+            
             <NavLink to="/users">
                     <h4> Users</h4>
             </NavLink>

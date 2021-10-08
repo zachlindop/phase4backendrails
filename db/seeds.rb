@@ -1,34 +1,53 @@
 
 Game.destroy_all
 User.destroy_all
+
 User.create!([
     {
       name: "Link",
+      username: 'link',
+      password: 'test123',
+      email: 'link@email.com',
       fav_loz_game: "A Link to the Past",
       pic: "https://tse2.mm.bing.net/th?id=OIP.sWceuOGDwyHVnz4J_mZM3gHaMW&pid=Api&P=0&w=300&h=300"
     },
     {
       name: "Zelda",
+      password: 'test123',
+      username: 'zelda',
+      email: 'zelda@email.com',
       fav_loz_game: "Twilight Princess",
       pic: "https://tse1.mm.bing.net/th?id=OIP.OGZ0x3s1gINgMxVD-yJoVgHaEK&pid=Api&P=0&w=333&h=188"
     },
     {
       name: "Epona",
+      password: 'test123',
+      username: 'epona',
+      email: 'epona@email.com',
       fav_loz_game: "Ocarina of Time",
       pic: "https://tse4.mm.bing.net/th?id=OIP.sppaSmPTBWJyjMxo5yiJ2wHaJx&pid=Api&P=0&w=300&h=300"
     },
     {
       name: "Mipha",
+      password: 'test123',
+      username: 'mipha',
+      email: 'mipha@email.com',
       fav_loz_game: "Breath of the Wild",
       pic: "https://tse1.mm.bing.net/th?id=OIP.DXrsQVf5LVhFnNMseIyUEwHaHZ&pid=Api&P=0&w=300&h=300"
     },
     {
         name: "Hylia",
+        password: 'test123',
+        username: 'hylia',
+        email: 'hylia@email.com',
         fav_loz_game: "A Link to the Past",
         pic: "https://tse1.mm.bing.net/th?id=OIP.ipXLGYm1kCSK6ejQ7aqScAHaHH&pid=Api&P=0&w=170&h=164"
     },
     {  
         name: "Gorko",
+        password: 'test123',
+        username: 'gorko',
+        email: 'gorko@email.com',
         fav_loz_game: "Skyward Sword",
         pic: "https://tse3.explicit.bing.net/th?id=OIP.dYh9kLC49JBgQe3-8G0Y-AAAAA&pid=Api&P=0&w=178&h=170"
     }
@@ -133,6 +152,14 @@ Game.create!([
   }
 ])
 
+# t.string "name"
+#     t.string "fav_loz_game"
+#     t.string "pic"
+#     t.datetime "created_at", precision: 6, null: false
+#     t.datetime "updated_at", precision: 6, null: false
+#     t.string "username"
+#     t.string "email"
+#     t.string "password_digest"
 
 # {
 #     name: "Zelda II: The Adventure of Link",

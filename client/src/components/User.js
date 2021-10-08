@@ -69,11 +69,13 @@ return (
         Update User Name:
         <input type= 'text' onChange={(e) => setNewUserName(e.target.value)} value={newUserName} /><br></br>
     </label>
+    <br></br>
     <label htmlFor='text'>
         Update Favorite LOZ Game:
         <input type= 'text' onChange={(e) => setNewFavLozGame(e.target.value)} value={newFavLozGame} /><br></br>
         {/* <input type="text" value={favLozGame} onchange={(e)=>{setFavLozGame(e.target.value)}}/> <br></br> */}
     </label>
+    <br></br>
     <label htmlFor='text'>
         Update Pic:
         <input type= 'text' onChange={(e) => setNewPic(e.target.value)} value={newPic} />

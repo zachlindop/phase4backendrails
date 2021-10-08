@@ -4,30 +4,7 @@ import React, {useState, useEffect}  from 'react';
 const Games = ({games, users, setGames}) => {
     const[userId, setUserId] = useState('')
 
-    // useEffect( () => {
-    //     fetch ("http://localhost:3001/games")
-    //            .then((response) => response.json())
-    //            .then(fetchedGames => {console.log(fetchedGames)
-    //            setNewGames(fetchedGames)
-    //          })
-               
-    //          }, [])
-    // const [gameName, setGameName] = useState('');
-    // const [gameImage, setGameImage] = useState('');
-    // const [gameUser, setGameUser] = useState('');
 
-    // function deleteGame (gameId){
-    //     // e.preventDefault();
-    //     console.log(`delete game called: ${gameId}`);
-
-    //     fetch (`http://localhost:9292/games/${gameId}`, { method: 'DELETE' })
-    //     .then((response) => console.log(response.json()))
-    //     let filterGames = newGames.filter(eachGame => 
-    //      eachGame.id !== gameId)
-    //      setNewGames([...filterGames])
-        
-
-    // }
 
     function getFilteredGames() {
         console.log(`getting filtered game for user: ${userId}`);        
@@ -53,6 +30,7 @@ return (
           getFilteredGames();
         }}
       >
+        <h1>Favorite Games Gallery</h1>
         <label htmlFor="location">
           Select User
           <select
@@ -65,6 +43,7 @@ return (
         })}         
           </select>
         </label>
+        
         <button>Submit</button>
       </form>
 
@@ -75,7 +54,7 @@ return (
                 <h2 className = "gameName">{game.name}</h2>
                 <h2 className = "gameYear">{game.year}</h2>
                 <img src={game.image} />
-                <h3> One of {game.users_name}'s favorite game!!!</h3>
+                {/* <h3> One of {game.users_name}'s favorite game!!!</h3> */}
                 </div>
             )
         })}

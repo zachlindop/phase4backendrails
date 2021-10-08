@@ -21,7 +21,7 @@ handleChange = (event) => {
   };
 
   redirect = () => {
-    // this.props.history.push('/')
+    //this.props.history.push('/')
   }
 
     handleErrors = () => {
@@ -100,9 +100,9 @@ handleChange = (event) => {
 <button placeholder="submit" type="submit">
             Log In
           </button>          
-          <div>
+          {/* <div>
             or <Link to='/signup'>sign up</Link>
-          </div>
+          </div> */}
           
          </form>
       </div>
