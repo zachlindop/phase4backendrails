@@ -59,26 +59,29 @@ return (
 <div className = "user">
                 <h2 className = "userName">{user.name}</h2>
                 <h2 className = "userFavGame">{user.fav_loz_game}</h2>
-                <img src={user.pic} />
+                <img src={user.pic} id="image" />
                 <br></br>
                 <Button onClick={e => deleteUser(user.id)}>Delete User</Button>                
     <form>
+        
     <div>
+        
         <br></br>
     <label htmlFor='text'>
         Update User Name:
-        <input type= 'text' onChange={(e) => setNewUserName(e.target.value)} value={newUserName} /><br></br>
+        <input type= 'text' placeholder='update name' onChange={(e) => setNewUserName(e.target.value)}  /><br></br>
     </label>
     <br></br>
+   
     <label htmlFor='text'>
         Update Favorite LOZ Game:
-        <input type= 'text' onChange={(e) => setNewFavLozGame(e.target.value)} value={newFavLozGame} /><br></br>
+        <input type= 'text' placeholder='update game' onChange={(e) => setNewFavLozGame(e.target.value)}  /><br></br>
         {/* <input type="text" value={favLozGame} onchange={(e)=>{setFavLozGame(e.target.value)}}/> <br></br> */}
     </label>
     <br></br>
     <label htmlFor='text'>
         Update Pic:
-        <input type= 'text' onChange={(e) => setNewPic(e.target.value)} value={newPic} />
+        <input type= 'text' placeholder='update pic' onChange={(e) => setNewPic(e.target.value)}  />
         {/* <input type="text" value={pic} onchange={(e)=>{setPic(e.target.value)}}/> <br></br> */}
     </label>
     <div className="button-row">                          

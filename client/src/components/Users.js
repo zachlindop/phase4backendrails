@@ -36,21 +36,30 @@ const Users = ({ users, setUsers }) => {
 
 
 return (
+
+    // <input
+    //         type="text"
+    //         name="name"
+    //         placeholder="Is Great for!"
+    //         className="input-text"
+    //         value={good_for}
+    //         onChange={(e) => setGood_for(e.target.value)}
+    //       />
 <div>  
 <form className="note-editor">
           <label htmlFor='text'>
               User Name:
-              <input type= 'text' onChange={(e) => setUserName(e.target.value)} value={userName} />
+              <input type= 'text' placeholder='insert name' onChange={(e) => setUserName(e.target.value)}  />
           </label>  
           <br/>
           <label htmlFor='text'>
               Fav Loz Game:
-              <input type= 'text' onChange={(e) => setFavLozGame(e.target.value)} value={favLozGame} />
+              <input type= 'text' placeholder='insert fav LOZ' onChange={(e) => setFavLozGame(e.target.value)}  />
           </label>   
           <br/>  
           <label htmlFor='text'>
               Pic:
-              <input type= 'text' onChange={(e) => setPic(e.target.value)} value={pic} />
+              <input type= 'text' placeholder='insert pic' onChange={(e) => setPic(e.target.value)}  />
           </label>        
           <div className="button-row">                          
               <Button onClick={handleCreateUser} variant="warning">Create User </Button>{' '}
@@ -66,6 +75,8 @@ return (
                 </div>
             )
         })}
+
+        
      
     </div>
            
@@ -74,3 +85,13 @@ return (
 }
 
 export default Users;
+
+// {games.map((game, index) => {
+//     return (
+        
+//         <div className = "game">
+//         <h2 className = "gameName">{game.name}</h2>
+//         <h2 className = "gameYear">Released:{game.year}</h2>
+//         <img src={game.image} class="image" />
+//         {/* <h3> One of {game.users_name}'s favorite game!!!</h3> */}
+//         

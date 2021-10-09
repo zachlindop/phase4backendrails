@@ -52,8 +52,8 @@ return (
                 
                 <div className = "game">
                 <h2 className = "gameName">{game.name}</h2>
-                <h2 className = "gameYear">{game.year}</h2>
-                <img src={game.image} />
+                <h2 className = "gameYear">Released:{game.year}</h2>
+                <img src={game.image} class="image" />
                 {/* <h3> One of {game.users_name}'s favorite game!!!</h3> */}
                 </div>
             )

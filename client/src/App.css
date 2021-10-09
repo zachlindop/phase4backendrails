@@ -37,3 +37,38 @@
   }
 }
 
+/* .image {
+  width: 250px;
+  height: 250px;
+}
+
+#image {
+  width: 250px;
+  height: 250px;
+} */
+/* .gameLibrary {
+  space: 
+}   */
+
+/* .gameLibrary{
+  display: flex;
+  align-content:center;
+  flex-flow: row wrap;
+  margin-top: 100px;
+  justify-content: center;
+} */
+
+img{
+  max-width: 100%;
+  border-radius: 25px
+  
+  }
+
+  /* .game{
+    width: 30%;
+    height: 500px;
+    border-radius: 25px
+    
+    } */
+
+    
